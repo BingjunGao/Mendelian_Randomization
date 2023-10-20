@@ -51,8 +51,8 @@ expo_rt<- read_exposure_data(
   samplesize_col = "N")
 
 
-expo_rt<- expo_rt[expo_rt$pval.exposure < 1e-05,]
-expo_rt <- clump_data(expo_rt,clump_kb = 30,clump_r2 = 0.01)
+expo_rt<- expo_rt[expo_rt$pval.exposure < 1e-06,]
+expo_rt <- clump_data(expo_rt,clump_kb = 100,clump_r2 = 0.01)
 
 outc_rt <- read_outcome_data(
   snps = expo_rt$SNP,
@@ -145,8 +145,8 @@ expo_rt<- read_exposure_data(
   pval_col = "P",
   samplesize_col = "N")
 
-expo_rt<- expo_rt[expo_rt$pval.exposure < 1e-05,]
-expo_rt <- clump_data(expo_rt,clump_kb = 30,clump_r2 = 0.01)  
+expo_rt<- expo_rt[expo_rt$pval.exposure < 1e-06,]
+expo_rt <- clump_data(expo_rt,clump_kb = 100,clump_r2 = 0.01)  
 
 MiBioGen_Clean_ALM_gwas <- extract_outcome_data(snps = expo_rt$SNP,
                                        outcomes = 'ebi-a-GCST90000025')
